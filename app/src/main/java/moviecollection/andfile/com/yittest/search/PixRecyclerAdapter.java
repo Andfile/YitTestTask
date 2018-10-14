@@ -1,22 +1,18 @@
 package moviecollection.andfile.com.yittest.search;
 
 import android.app.ActionBar;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 
 import com.google.android.flexbox.FlexboxLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import moviecollection.andfile.com.yittest.MainActivity;
 import moviecollection.andfile.com.yittest.R;
 import moviecollection.andfile.com.yittest.model.HitsItem;
 import moviecollection.andfile.com.yittest.utils.Const;

@@ -1,4 +1,4 @@
-package moviecollection.andfile.com.yittest;
+package moviecollection.andfile.com.yittest.search;
 
 import android.support.annotation.NonNull;
 

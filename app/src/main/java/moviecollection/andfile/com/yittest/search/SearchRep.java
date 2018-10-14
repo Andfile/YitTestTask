@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import moviecollection.andfile.com.yittest.SearchCallbacks;
 import moviecollection.andfile.com.yittest.model.HitsItem;
 import moviecollection.andfile.com.yittest.model.PixResponse;
 import moviecollection.andfile.com.yittest.network.Network;

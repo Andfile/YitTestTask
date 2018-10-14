@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import moviecollection.andfile.com.yittest.SearchCallbacks;
+import moviecollection.andfile.com.yittest.search.SearchCallbacks;
 import moviecollection.andfile.com.yittest.model.PixResponse;
 import moviecollection.andfile.com.yittest.utils.Const;
 import okhttp3.OkHttpClient;

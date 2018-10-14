@@ -1,4 +1,4 @@
-package moviecollection.andfile.com.yittest;
+package moviecollection.andfile.com.yittest.search;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
@@ -20,6 +20,7 @@ import com.google.android.flexbox.JustifyContent;
 
 import java.util.List;
 
+import moviecollection.andfile.com.yittest.R;
 import moviecollection.andfile.com.yittest.model.HitsItem;
 import moviecollection.andfile.com.yittest.search.PixRecyclerAdapter;
 import moviecollection.andfile.com.yittest.search.RecyclerLoadNextPage;
@@ -27,7 +28,7 @@ import moviecollection.andfile.com.yittest.search.SearchViewModel;
 import moviecollection.andfile.com.yittest.utils.Const;
 import moviecollection.andfile.com.yittest.utils.ItemHeightCalculateHolder;
 
-public class MainActivity extends AppCompatActivity {
+public class SearchPixActivity extends AppCompatActivity {
 
     private SearchViewModel<List<HitsItem>> searchVewModel;
     private LiveData<List<HitsItem>> searchData;
@@ -53,13 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         searchVewModel = obtainSearchViewModel();
-        searchData = searchVewModel.getData();
-        searchData.observe(this, new Observer<List<HitsItem>>() {
-            @Override
-            public void onChanged(List<HitsItem> hitsItems) {
-                adapter.addData(hitsItems);
-            }
-        });
+        getDataFromViewModel();
 
         ViewTreeObserver vto = recyclerView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -73,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         scrollToPossitionIfNeeded();
+    }
+
+    private void getDataFromViewModel() {
+        searchData = searchVewModel.getData();
+        searchData.observe(this, new Observer<List<HitsItem>>() {
+            @Override
+            public void onChanged(List<HitsItem> hitsItems) {
+                adapter.addData(hitsItems);
+            }
+        });
     }
 
     @Override
@@ -157,6 +162,8 @@ public class MainActivity extends AppCompatActivity {
                 searchBar.setText("");
                 showClearButton(false);
                 adapter.clearData();
+                searchVewModel.clearSearch();
+                getDataFromViewModel();
             }
         });
     }

@@ -1,22 +1,12 @@
 package moviecollection.andfile.com.yittest.search;
 
-import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.OnLifecycleEvent;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import moviecollection.andfile.com.yittest.SearchCallbacks;
-import moviecollection.andfile.com.yittest.model.HitsItem;
 
 /**
  * Created by Andrey Lebedev on 10/13/2018.
@@ -76,7 +66,8 @@ public class SearchViewModel<MODEL> extends ViewModel implements LifecycleObserv
 
     public void clearSearch(){
 
-
+        searchedData = new MutableLiveData<>();
+        repository.clearRepo();
     }
 
     @Override
